@@ -34,5 +34,8 @@ def validate():
 def is_windows():
     global system
     return system == "Windows"
+def is_linux():
+    global system
+    return system == "Linux"
 
 init()

@@ -4,21 +4,25 @@ from installers.utils import env
 from installers.utils import file_manager
 
 def win_installer():
-   # read source bash profile
    src = 'installers/bash/.bashrc'
-   # append to ~/.bashrc
    dst = env.home + 'bashtest'
-   print (">>>",dst)
-
    file_manager.append(src_path=src, dst_path=dst)
 
-   #print ('bash_profile_path=%s' % bashrcPath)
-   print("bash configuration finished")
+def linux_installer():
+   src = 'installers/bash/.bashrc'
+   dst = env.home + 'bashtest'
+   file_manager.append(src_path=src, dst_path=dst)
+
 
 def install():
+   print("bash configuration begin")
    if env.is_windows():
       win_installer()
+      return True
+   elif env.is_linux():
+      linux_installer()
       return True
    else:
       print ('Unsupported platform: ', env.system)
       return False
+   print("bash configuration finish")
