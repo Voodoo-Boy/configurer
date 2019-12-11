@@ -1,0 +1,6 @@
+- Install py 3.8
+- Create virtual environment
+  - $ py -3 -m venv .venv
+  - $ source .venv/scripts/activate
+  - $ tar czvf configurer-py.tar.gz --exclude configurer-py/__pycache__ --exclude configurer-py/.venv configurer-py
+  - $ scp ./configurer-py.tar.gz  $AZVM:/home/wanghan/configurer-py.tar.gz
