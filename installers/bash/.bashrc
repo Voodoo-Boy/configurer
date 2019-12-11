@@ -13,9 +13,9 @@ alias l.='ls -d .* --color=auto'
 # alias l='ls -CF --color=auto'
 
 alias ali='ssh wanghan@104.41.184.211'
-alias azure='ssh -o ServerAliveInterval=10 wanghan@23.101.15.190'
+alias azure='ssh -o ServerAliveInterval=10 wanghan@52.229.224.254'
 export ALIVM=wanghan@39.107.109.141
-export AZVM=wanghan@23.101.15.190
+export AZVM=wanghan@52.229.224.254
 export GITHUB=https://github.com/Voodoo-Boy
 
 echo ":P"
