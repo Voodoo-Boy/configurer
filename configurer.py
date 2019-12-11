@@ -21,10 +21,11 @@ def cui():
          print("Install {0}? (y/n): ".format(option), end='')
          if (input().strip().lower() == 'y'):
              installer.install()
+             print()
     return
 
 init()
 cui()
 
-print("install finished")
+print("Install finished")
 print(":P")

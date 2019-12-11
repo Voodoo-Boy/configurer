@@ -12,4 +12,4 @@ def install():
     # copy .vimrc to home directory
     file_manager.copy_file(vimrc_src, vimrc_dst)
     print("copy .vimrc copy to $HOEM directory")
-    print("vim configuration end\n")
+    print("vim configuration end")

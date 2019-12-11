@@ -45,9 +45,9 @@ def is_linux():
     return system == "Linux"
 def get_env(key):
     try:
-        env_ver = os.environ[key]
+        return os.environ[key]
     except:
-        env_ver = None
+        return None
 def set_env(key, val):
     os.environ[key] = val
 

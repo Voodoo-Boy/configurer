@@ -13,7 +13,7 @@ stat_source_bashrc = "source $HOME/.bashrc." + env.user
 stat_export_version = "export _VER=" + env.ver_num
 
 def install():
-    print("\nbash configuration begin")
+    print("bash configuration begin")
 
     # Check if bashrc has been installed
     print("Check if bash configuration has been installed")
@@ -34,7 +34,7 @@ def install():
             # add statements to source our .bashrc.{$user} and add an env var to indicate the version
             file_manager.append_text(profile, shell_exp)
             print("{0} updated, build version={1}".format(profile, env.ver_num))
-            print("bash configuration finished\n")
+            print("bash configuration finished")
             return
 
     # TODO if no profile exist, create one (until the condition occurs)
@@ -42,9 +42,8 @@ def install():
     exit()
 
 def checkInstalled():
-    install_ver = env.get_env(env_ver)
-    if not install_ver:
+    ver = env.get_env(env_ver)
+    if not ver:
         return False
     else:
-        return install_ver
-
+        return ver
