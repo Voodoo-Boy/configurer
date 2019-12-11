@@ -4,3 +4,5 @@
   - $ source .venv/scripts/activate
   - $ tar czvf configurer-py.tar.gz --exclude configurer-py/__pycache__ --exclude configurer-py/.venv configurer-py
   - $ scp ./configurer-py.tar.gz  $AZVM:/home/wanghan/configurer-py.tar.gz
+  - $ git config --global core.autocrlf input
+  - $ git config --global --edit

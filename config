@@ -1,1 +1,11 @@
-py configurer.py
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    python3 configurer.py
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    py configurer.py
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    py configurer.py
+elif [[ "$OSTYPE" == "msys" ]]; then
+    py configurer.py
+else
+    echo "unkonwn platform"
+fi
