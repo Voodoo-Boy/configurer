@@ -40,4 +40,4 @@ def install():
 
 def checkInstalled():
     return env.env_ver
-    
+
