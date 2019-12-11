@@ -7,17 +7,19 @@ from installers.utils import file_manager
 # bash constants
 bash_src = "installers/bash/.bashrc"
 bash_dst = env.home + ".bashrc." + env.user
+env_ver = '_VER'
 # shell statements to add
 stat_source_bashrc = "source $HOME/.bashrc." + env.user
-stat_export_version = "export _VER=" + env.install_ver
+stat_export_version = "export _VER=" + env.ver_num
 
 def install():
     print("\nbash configuration begin")
 
     # Check if bashrc has been installed
     print("Check if bash configuration has been installed")
-    if checkInstalled():
-        print(".bashrc has been installed, build version="+env.env_ver)
+    installed = checkInstalled()
+    if installed:
+        print(".bashrc has been installed, build version=" + installed)
         return
 
     # copy our customized bash profile to home directory
@@ -31,10 +33,7 @@ def install():
         if file_manager.file_exists(profile):
             # add statements to source our .bashrc.{$user} and add an env var to indicate the version
             file_manager.append_text(profile, shell_exp)
-            print("{0} updated".format(profile))
-            # export the _VER env var
-            os.environ["_VER"] = env.install_ver
-            print("environment variable updated, _VER={0}".format(profile))
+            print("{0} updated, build version={1}".format(profile, env.ver_num))
             print("bash configuration finished\n")
             return
 
@@ -43,8 +42,9 @@ def install():
     exit()
 
 def checkInstalled():
-    if env.env_ver:
-        return True
-    else:
+    install_ver = env.get_env(env_ver)
+    if not install_ver:
         return False
+    else:
+        return install_ver
 

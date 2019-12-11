@@ -6,7 +6,7 @@ from getpass import getuser
 
 # global constants of runtime infos
 currentDT = datetime.datetime.now()
-install_ver = currentDT.strftime("%Y%m%d%H%M%S")
+ver_num = currentDT.strftime("%Y%m%d%H%M%S")
 # platform
 pythonVersion = platform.python_version()
 system = platform.system()
@@ -17,7 +17,6 @@ processor = platform.processor()
 # user
 home = expanduser("~")
 user = getuser()
-env_ver = None
 
 # print platform info
 def info():
@@ -44,14 +43,15 @@ def is_windows():
 def is_linux():
     global system
     return system == "Linux"
-
-def init():
-    global env_ver
+def get_env(key):
     try:
-        env_ver = os.environ['_VER']
+        env_ver = os.environ[key]
     except:
         env_ver = None
+def set_env(key, val):
+    os.environ[key] = val
 
+def init():
     global home
     if is_windows():
         home += '\\'
