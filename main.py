@@ -2,8 +2,10 @@
 
 import installers.utils.env
 import installers.bash.installer
+import installers.vim.installer
 
-installers.bash.installer.install()
+#installers.bash.installer.install()
+installers.vim.installer.install()
 
 # if installers.utils.env.validateEnv():
 #     print("Succeed!")
