@@ -1,6 +1,10 @@
-import sys
+import datetime
 import platform
 from os.path import expanduser
+from getpass import getuser
+
+currentDT = datetime.datetime.now()
+install_ver = currentDT.strftime("%Y%m%d%H%M%S")
 
 pythonVersion = platform.python_version()
 system = platform.system()
@@ -9,6 +13,7 @@ hostname = platform.node()
 architecture = platform.machine()
 processor = platform.processor()
 home = expanduser("~")
+user = getuser()
 
 def init():
     global home

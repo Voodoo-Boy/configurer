@@ -17,3 +17,5 @@ alias azure='ssh -o ServerAliveInterval=10 wanghan@23.101.15.190'
 export ALIVM=wanghan@39.107.109.141
 export AZVM=wanghan@23.101.15.190
 export GITHUB=https://github.com/Voodoo-Boy
+
+echo ":)"
