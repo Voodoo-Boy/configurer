@@ -180,8 +180,7 @@ command! Vimrc execute 'e '.VimrcFile
 command! WinExplore execute '!start explorer .'
 
 " Remove all ^M
-command! UnixEOL execute '%s/
-//g'
+command! UnixEOL execute '%s///g'
 
 " Alias
 "cabbrev cdwsa cd C:\Users\t-hawan\Source\Repos\WSAMicrosoftDoc
