@@ -1,6 +1,7 @@
 import os
 import re
 from shutil import copyfile
+from shutil import copytree
 from installers.utils.output import *
 
 def append(src_path, dst_path):
@@ -23,5 +24,9 @@ def file_exists(filepath):
 def symbol_link(src, dst):
     return os.symlink(src, dst)
 
-def copy(src, dst):
+def copy_file(src, dst):
     return copyfile(src, dst)
+
+def copy_dir(src, dst):
+    # TODO add exception handle when occurs
+    return shutil.copytree(src, dest)

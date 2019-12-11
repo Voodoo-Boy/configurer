@@ -13,7 +13,7 @@ exp_export_version = "export _VER=" + env.install_ver
 def install():
     print("bash configuration begin")
     # copy our customized bash profile to home directory
-    file_manager.copyfile(bash_src, bash_dst)
+    file_manager.copy_file(bash_src, bash_dst)
 
     # modify the default bash profile to load our custmized configs
     shell_exp = "\n{0}\n{1}\n".format(exp_source_bashrc, exp_export_version)

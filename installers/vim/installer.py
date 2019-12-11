@@ -3,31 +3,21 @@
 from installers.utils import env
 from installers.utils import file_manager
 
-def win_installer():
-   src = 'installers/bash/.bashrc'
-   dst = env.home + '.bashrc'
-   file_manager.append(src_path=src, dst_path=dst)
+vimrc_src = "installers/vim/.vimrc"
+vimrc_dst = env.home + ".vimrc"
 
-def linux_installer():
-   src = 'installers/bash/.bashrc'
-   dst = env.home + '.bashrc'
-   file_manager.append(src_path=src, dst_path=dst)
-   
-   # link .bash_profile, .profile to .bashrc
-   links = [".bash_profile"]
-   for link in links:
-      os.symlink(dst, env.home+links)
+gvimrc_src = "installers/vim/_vimrc"
+gvimrc_dst = env.home + "_vimrc"
+gvimfile_src = "installers/vim/vimfiles"
+gvimfile_dst = env.home + "vimfiles"
 
+def install_vim():
+    print("vim configuration begin")
+    file_manager.copy_file(vimrc_src, vimrc_dst)
+    print("vim configuration begin")
 
-
-def install():
-   print("bash configuration begin")
-   if env.is_windows():
-      linux_installer()
-   elif env.is_linux():
-      linux_installer()
-   else:
-      print ('Unsupported platform: ', env.system)
-      return False
-   print("bash configuration finish")
-   return True
+def gvim_installer():
+    print("gvim configuration begin")
+    file_manager.copy_file(gvimrc_src, gvimrc_dst)
+    file_manager.copy_dir(gvimfile_src, gvimfile_dst)
+    print("gvim configuration begin")
