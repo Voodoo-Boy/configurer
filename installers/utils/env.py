@@ -11,11 +11,13 @@ processor = platform.processor()
 home = expanduser("~")
 
 def init():
+    global home
     if is_windows():
-        global home
         home += '\\'
+    elif is_linux():
+        home += '/'
 
-def print():
+def info():
     print('Python Version:\t\t', pythonVersion)
     print('Platform:\t\t', system)
     print('Platform Version:\t', systemVersoin)

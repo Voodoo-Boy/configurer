@@ -15,5 +15,5 @@ alias l.='ls -d .* --color=auto'
 alias ali='ssh wanghan@104.41.184.211'
 alias azure='ssh -o ServerAliveInterval=10 wanghan@23.101.15.190'
 export ALIVM=wanghan@39.107.109.141
-export AZVPS=wanghan@23.101.15.190
+export AZVM=wanghan@23.101.15.190
 export GITHUB=https://github.com/Voodoo-Boy
