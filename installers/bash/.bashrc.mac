@@ -5,12 +5,11 @@ parse_git_branch()
 {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-PS1='${debian_chroot:+($debian_chroot)}\[\033[36m\]\u@\h\[\033[00m\] \[\033[37m\]\w\[\033[32m\]$(parse_git_branch) \[\033[00m\]\$ '
+PS1='\[\033[36m\]\u@\h\[\033[00m\] \[\033[37m\]\w\[\033[32m\]$(parse_git_branch) \[\033[00m\]\$ '
 
 # aliases
-alias ll='ls -lF --color=auto'
-alias l.='ls -d .* --color=auto'
-# alias l='ls -CF --color=auto'
+alias ll='ls -lF -G'
+alias l.='ls -l .* -G'
 
 alias ali='ssh wanghan@104.41.184.211'
 alias azure='ssh -o ServerAliveInterval=10 wanghan@52.229.224.254'

@@ -14,6 +14,7 @@ stat_export_version = "export _VER=" + env.ver_num
 
 def install():
     print("bash configuration begin")
+    init()
 
     # Check if bashrc has been installed
     print("Check if bash configuration has been installed")
@@ -47,3 +48,8 @@ def checkInstalled():
         return False
     else:
         return ver
+
+def init():
+    if env.is_mac():
+        global bash_src
+        bash_src += ".mac"
