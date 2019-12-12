@@ -17,7 +17,7 @@ def init():
 
 # interact with user, check what to install
 def cui():
-    for option, installer in options.items():
+    for option, installer in sorted(options.items()):
          print("Install {0}? (y/n): ".format(option), end='')
          if (input().strip().lower() == 'y'):
              installer.install()
