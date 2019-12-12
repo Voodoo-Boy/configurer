@@ -43,6 +43,9 @@ def is_windows():
 def is_linux():
     global system
     return system == "Linux"
+def is_mac():
+    global system
+    return system == "Darwin"
 def get_env(key):
     try:
         return os.environ[key]
@@ -56,6 +59,8 @@ def init():
     if is_windows():
         home += '\\'
     elif is_linux():
+        home += '/'
+    elif is_mac():
         home += '/'
 
 init()
