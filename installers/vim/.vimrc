@@ -43,7 +43,7 @@ endif
 set lcs=tab:>-,trail:-      " Set chars to display invisible characters (:list! to toggle invisible symbol display)
 
 " Remeber last exit postion for file
-set viminfo='10,\"100,:20,%,n~/_viminfo
+set viminfo='10,\"100,:20,%,n~/.viminfo
 function! ResCur()
   if line("'\"") <= line("$")
     normal! g`"
